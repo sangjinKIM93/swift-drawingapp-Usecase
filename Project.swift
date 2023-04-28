@@ -10,6 +10,13 @@ private let swiftPackagePath: String = "SwiftPackages"
 private let appName: String = "drawingchat"
 
 let project = Project(name: appName,
+                      packages: [
+                        .remote(
+                            url: "https://github.com/ReactiveX/RxSwift.git",
+                            requirement: .upToNextMajor(from: "6.5.0")
+                        ),
+                        .remote(url: "https://github.com/daltoniam/Starscream.git", requirement: .upToNextMajor(from: "4.0.0"))
+                      ],
                       settings: Settings.settings(configurations: makeConfigurations()),
                       targets: [
                         Target(
