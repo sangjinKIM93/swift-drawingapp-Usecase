@@ -7,6 +7,7 @@
 
 import Foundation
 import QuartzCore
+import DrawingModel
 
 // 무슨 기준으로 나눈거니?
 // 기대되는 출력값.

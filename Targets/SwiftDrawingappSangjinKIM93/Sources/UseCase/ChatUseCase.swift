@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import DrawingModel
+import DrawingNetwork
 
 protocol ChatUseCaseProtocol {
     var delegate: ChatUseCaseDelegate? { get set }

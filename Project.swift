@@ -15,7 +15,12 @@ let project = Project(name: appName,
                             url: "https://github.com/ReactiveX/RxSwift.git",
                             requirement: .upToNextMajor(from: "6.5.0")
                         ),
-                        .remote(url: "https://github.com/daltoniam/Starscream.git", requirement: .upToNextMajor(from: "4.0.0"))
+                        .remote(
+                            url: "https://github.com/daltoniam/Starscream.git",
+                            requirement: .upToNextMajor(from: "4.0.0")
+                        ),
+                        .package(path: "\(swiftPackagePath)/DrawingNetwork"),
+                        .package(path: "\(swiftPackagePath)/DrawingModel"),
                       ],
                       settings: Settings.settings(configurations: makeConfigurations()),
                       targets: [
@@ -28,6 +33,10 @@ let project = Project(name: appName,
                             infoPlist: makeInfoPlist(),
                             sources: ["\(basePath)/Sources/**"],
                             resources: ["\(basePath)/Resources/**"],
+                            dependencies: [
+                                .package(product: "DrawingNetwork"),
+                                .package(product: "DrawingModel"),
+                            ],
                             settings: baseSettings()
                         )
                       ],

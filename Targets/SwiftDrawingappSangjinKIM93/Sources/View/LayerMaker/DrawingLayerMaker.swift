@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DrawingModel
 
 protocol DrawingLayerMakerProtocol {
     func makeSquareLayer(square: Square, color: ColorAssets) -> CAShapeLayer

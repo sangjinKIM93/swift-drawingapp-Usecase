@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DrawingModel
 
 protocol DrawingUseCaseProtocol {
     func drawRectangle(rect: CGRect, completion: (Square)->())

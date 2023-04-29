@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DrawingNetwork
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

@@ -8,7 +8,7 @@
 import Foundation
 import CoreGraphics
 
-protocol Shape {
+public protocol Shape {
     var uuid: UUID { get }
     var points: [CGPoint] { get }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreGraphics
+import DrawingModel
 
 protocol DrawingStoreProtocol {
     func appendData(data: Shape)

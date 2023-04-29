@@ -8,20 +8,20 @@
 import Foundation
 import CoreGraphics
 
-class Line: Shape, Identifiable, Codable {
-    let uuid: UUID
-    private(set) var points: [CGPoint]
+public class Line: Shape, Identifiable, Codable {
+    public let uuid: UUID
+    public var points: [CGPoint]
     
-    init(points: [CGPoint]) {
-        self.uuid = UUID()
+    public init(uuid: UUID = UUID(), points: [CGPoint]) {
+        self.uuid = uuid
         self.points = points
     }
     
-    func append(point: CGPoint) {
+    public func append(point: CGPoint) {
         self.points.append(point)
     }
     
-    func toJsonData() -> Data? {
+    public func toJsonData() -> Data? {
         if let jsonData = try? JSONEncoder().encode(self) {
             return jsonData
         }

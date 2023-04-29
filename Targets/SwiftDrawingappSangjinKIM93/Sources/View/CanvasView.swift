@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DrawingModel
 
 class CanvasView: UIView {
     
