@@ -38,10 +38,28 @@ let project = Project(name: appName,
                                 .package(product: "DrawingModel"),
                             ],
                             settings: baseSettings()
+                        ),
+                        Target(
+                            name: "iOS-DEV",
+                            platform: .iOS,
+                            product: .app,
+                            bundleId: bundleId,
+                            deploymentTarget: .iOS(targetVersion: iOSTargetVersion, devices: .iphone),
+                            infoPlist: makeInfoPlist(),
+                            sources: ["\(basePath)/Sources/**"],
+                            resources: ["\(basePath)/Resources/**"],
+                            dependencies: [
+                                .package(product: "DrawingNetwork"),
+                                .package(product: "DrawingModel"),
+                            ],
+                            settings: baseSettings()
                         )
                       ],
                       additionalFiles: [
                         "README.md"
+                      ],
+                      resourceSynthesizers: [
+                        .custom(name: "Assets", parser: .assets, extensions: ["xcassets"]),
                       ])
 
 private func makeInfoPlist(merging other: [String: InfoPlist.Value] = [:]) -> InfoPlist {
@@ -88,4 +106,3 @@ private func baseSettings() -> Settings {
                              configurations: [],
                              defaultSettings: .recommended)
 }
-

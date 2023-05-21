@@ -23,6 +23,8 @@ class DrawingTypeButton: UIButton {
         self.layer.borderColor = UIColor.gray.cgColor
         self.layer.borderWidth = 1
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.setImage(Asset.icPause.image, for: .normal)
     }
     
     required init?(coder: NSCoder) {
